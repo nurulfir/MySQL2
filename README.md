@@ -6,7 +6,6 @@
 |Muhammad Nurul Firdaus|312310495|TI.23.A5|Basis Data|
 
 # Soal Latihan Praktikum
-
 ## Data Model Mapping
 
 ```
@@ -135,7 +134,7 @@ Berdasarkan table Mahasiswa pada praktikum sebelumnya: (nim, nama, jenis_kelamin
 
 ***Isi data pada table tersebut sebanyak minimal 5 record data. Tampilkan semua isi/record tabel!***
 
-- Ubah data tanggal lahir mahasiswa yang bernama Ari menjadi: 1979-08-31!
+- Ubah data tanggal lahir Mahasiswa yang bernama Ari menjadi: 1979-08-31!
 
 - Tampilkan satu baris / record data yang telah diubah tadi yaitu record dengan nama Ari saja!
 
@@ -147,13 +146,13 @@ Berdasarkan table Mahasiswa pada praktikum sebelumnya: (nim, nama, jenis_kelamin
 
 - Tampilkan semua Mahasiswa yang berasal dari Bekasi dengan kelamin laki-laki atau Mahasiswa yang berumur lebih dari 22 tahun dengan kelamin wanita!
 
-- Tampilkan data nama dan alamat mahasiswa saja dari tabel tersebut
+- Tampilkan data nama dan alamat Mahasiswa saja dari tabel tersebut
 
-- Tampilkan data mahasiswa terurut berdasarkan nama.
+- Tampilkan data Mahasiswa terurut berdasarkan nama.
 
 **1. Mengisi tabel dengan minimal 5 record data :**
 ```
-insert into mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos, no_hp, kd_ds) values 
+insert into Mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos, no_hp, kd_ds) values 
 -> (11223344,"ari santoso","Laki-laki","1998-10-12","","Bekasi","","",""), 
 -> (11223345,"ario talib","Laki-laki","1999-11-16","","Cikarang","","",""), 
 -> (11223346,"dina marlina","Perempuan","1997-12-01","","Karawang","","",""), 
@@ -166,31 +165,31 @@ insert into mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos
 
 **2. Menampilkan semua isi/record pada tabel bisa menggunakan kode berikut :**
 
-`select*from mahasiswa;`
+`select*from Mahasiswa;`
 
 ![alt text](Screenshot/12.png)
 
-**3. Mengubah data tanggal lahir mahasiswa yang bernama Ari menjadi : 1979-08-31 menggunakan kode berikut :**
+**3. Mengubah data tanggal lahir Mahasiswa yang bernama Ari menjadi : 1979-08-31 menggunakan kode berikut :**
 
-`update mahasiswa set tgl_lahir='1979-08-31' where nim=11223344;`
+`update Mahasiswa set tgl_lahir='1979-08-31' where nim=11223344;`
 
 ![alt text](Screenshot/13.png)
 
 **4. Menampilkan satu baris / record data yang telah diubah tadi yaitu record dengan nama Ari saja dengan cara sebagai berikut :**
 
-`select*from mahasiswa where nim=11223344;`
+`select*from Mahasiswa where nim=11223344;`
 
 ![alt text](Screenshot/14.png)
 
 **5. Menghapus Mahasiswa yang bernama Dina dengan cara sebagai berikut:**
 
-`delete from mahasiswa where nim=11223346;`
+`delete from Mahasiswa where nim=11223346;`
 
 ![alt text](Screenshot/15.png)
 
 **6. Menampilkan record atau data yang tanggal kelahirannya lebih dari atau sama dengan 1996-1-2 dengan cara sebagai berikut :**
 
-`select*from mahasiswa where tgl_lahir<='1996-1-2';`
+`select*from Mahasiswa where tgl_lahir<='1996-1-2';`
 
 ![alt text](Screenshot/16.png)
 
@@ -202,22 +201,22 @@ insert into mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos
 
 **8. Menampilkan semua Mahasiswa yang berasal dari Bekasi dengan kelamin laki-laki atau Mahasiswa yang berumur lebih dari 22 tahun dengan kelamin wanita dengan cara sebagai berikut :**
 ```
-select * from mahasiswa where kota='Bekasi' and jenis_kelamin='Laki-laki' 
+select * from Mahasiswa where kota='Bekasi' and jenis_kelamin='Laki-laki' 
 or tgl_lahir<='2002-4-22' 
 and jenis_kelamin='Perempuan';
 ```
 
 ![alt text](Screenshot/18.png)
 
-**9. Menampilkan data nama dan jalan mahasiswa saja dari tabel tersebut dengan cara sebagai berikut :**
+**9. Menampilkan data nama dan jalan Mahasiswa saja dari tabel tersebut dengan cara sebagai berikut :**
 
-`select nama, jalan from mahasiswa;`
+`select nama, jalan from Mahasiswa;`
 
 ![alt text](Screenshot/19.png)
 
-**10. Menampilkan data mahasiswa terurut berdasarkan nama dengan cara sebagai berikut :**
+**10. Menampilkan data Mahasiswa terurut berdasarkan nama dengan cara sebagai berikut :**
 
-`select*from mahasiswa -> order by nama asc;`
+`select*from Mahasiswa -> order by nama asc;`
 
 ![alt text](Screenshot/20.png)
 
@@ -261,9 +260,9 @@ and jenis_kelamin='Perempuan';
 
 *Contoh :*
 
-`DELETE FROM biodata WHERE nim=‘12334’`
+`DELETE FROM biodata WHERE nim=‘1234’`
 
-![gambar15](screenshot/ss15.png)
+![alt text](Screenshot/24.png)
 
 ***Apa bedanya penggunaan BETWEEN dan penggunaan operator >= dan <= ?***
 
@@ -273,18 +272,16 @@ and jenis_kelamin='Perempuan';
 
 **Jawaban nya :**
 
-Operator between ini untuk menangani operasi “jangkauan” sedangkan operator >= dan <= termasuk pada operator relasional. Operator yang digunakan yntuk perbandingan antara dua buah nilai. Jenis dari operator ini adalah: = , >, <, >=, <=, <>
+Operator BETWEEN ini untuk menangani operasi “jangkauan” sedangkan operator >= dan <= termasuk pada operator relasional. Operator yang digunakan untuk perbandingan antara dua buah nilai. Jenis dari operator ini adalah: = , >, <, >=, <=, <>
 
 ***Berikan kesimpulan anda!***
 
 Data Manipulation Language (DML) adalah bahasa pemrograman yang digunakan untuk mengakses, memanipulasi, dan mengelola data dalam sebuah database. DML memungkinkan pengguna untuk melakukan operasi seperti penyisipan data baru, pembaruan data yang sudah ada, penghapusan data, dan kueri data untuk pengambilan informasi yang diperlukan.
 
-Dalam DML, pengguna dapat menggunakan perintah SQL (Structured Query Language) untuk mengakses data. SQL adalah bahasa standar untuk mengakses dan mengelola data dalam database relasional. Perintah SQL yang digunakan dalam DML termasuk menambah, mengubah, menghapus, dan menampilkan data seperti yang telah dipraktekan diatas.
+Dalam DML, pengguna dapat menggunakan perintah SQL (Structured Query Language) untuk mengakses data. SQL adalah bahasa standar untuk mengakses dan mengelola data dalam database relasional. Perintah SQL yang digunakan dalam DML termasuk menambah, mengubah, menghapus, dan menampilkan data seperti yang telah dipraktekkan diatas.
 
 ***Buat laporan praktikum yang berisi, langkah-langkah praktikum beserta screenshot yang sudah dilakukan dalam bentuk dokumen.***
 
 <img src=https://pngimg.com/uploads/google_drive/google_drive_PNG9.png width="110px" >
 
-- [Link Laporan Praktikum](https://docs.google.com/document/d/1ZAfeS9WCGe560KWWInXV93w66mofY1fy/edit?usp=sharing&ouid=117024232096925929007&rtpof=true&sd=true)
-
-## Finish....
+- [Link Laporan Praktikum](https://docs.google.com/document/d/11nxeeY7RrJtV7LY4_I90JiMloq9qy-ov/edit?usp=drivesdk&rtpof=true&sd=true)
